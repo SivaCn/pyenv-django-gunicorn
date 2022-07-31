@@ -42,11 +42,25 @@ printf "${BOLD}${COL_GREEN} Completed${COL_RESET}\n"
 
 source ${PYENVRC}
 
+printf "\n${COL_BLUE}Installing python with version: ${PYTHON_VERSION}"
 pyenv install ${PYTHON_VERSION}
-pyenv local ${PYTHON_VERSION}
+printf "${BOLD}${COL_GREEN} Completed${COL_RESET}"
 
+printf "\n${COL_BLUE}Activating python version: ${PYTHON_VERSION}"
+pyenv local ${PYTHON_VERSION}
+printf "${BOLD}${COL_GREEN} Completed${COL_RESET}"
+
+printf "\n${COL_BLUE}Upgrading the pip to the latest version:"
 pip install --upgrade pip
+printf "${BOLD}${COL_GREEN} Completed${COL_RESET}"
+
+printf "\n${COL_BLUE}Installing package manager poetry:"
 pip install poetry
+printf "${BOLD}${COL_GREEN} Completed${COL_RESET}"
+
+printf "\n${COL_BLUE}Installing all the python dependencies:"
+poetry install
+printf "${BOLD}${COL_GREEN} Completed${COL_RESET}"
 
 exit 0
 
