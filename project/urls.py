@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,9 +15,27 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+# ----------- START: Namespace Imports ---------- #
+# ----------- END: Namespace Imports ---------- #
+
+# ----------- START: Native Imports ---------- #
+# ----------- END: Native Imports ---------- #
+
+# ----------- START: Third Party Imports ---------- #
 from django.contrib import admin
 from django.urls import path
+# ----------- END: Third Party Imports ---------- #
+
+# ----------- START: In-App Imports ---------- #
+from project.views import test_view
+# ----------- END: In-App Imports ---------- #
+
+__all__ = [
+    # All public symbols go here.
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('entry-point1', test_view)
 ]

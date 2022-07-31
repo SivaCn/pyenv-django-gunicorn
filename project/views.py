@@ -2,7 +2,7 @@
 
 """
 
-    mod:: `project`
+    mod:: `project.core`
 
 """
 
@@ -11,11 +11,10 @@ __import__('pkg_resources').declare_namespace(__name__)
 # ----------- END: Namespace Imports ---------- #
 
 # ----------- START: Native Imports ---------- #
-import os
-import sys
 # ----------- END: Native Imports ---------- #
 
 # ----------- START: Third Party Imports ---------- #
+from django.http import HttpResponse
 # ----------- END: Third Party Imports ---------- #
 
 # ----------- START: In-App Imports ---------- #
@@ -25,6 +24,6 @@ __all__ = [
     # All public symbols go here.
 ]
 
-sys.path[0:0] = [
-    os.path.dirname(os.path.abspath(__file__))
-]
+
+def test_view(request):
+    return HttpResponse("Hello world!")
